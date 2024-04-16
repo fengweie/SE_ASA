@@ -1,0 +1,4 @@
+/mnt/workdir/fengwei/ultra_wide/DA_vessel/data_np/data_np/test_ct/image_ct_1019.nii.gz.npz
+/mnt/workdir/fengwei/ultra_wide/DA_vessel/data_np/data_np/test_ct/image_ct_1014.nii.gz.npz
+/mnt/workdir/fengwei/ultra_wide/DA_vessel/data_np/data_np/test_ct/image_ct_1003.nii.gz.npz
+/mnt/workdir/fengwei/ultra_wide/DA_vessel/data_np/data_np/test_ct/image_ct_1008.nii.gz.npz

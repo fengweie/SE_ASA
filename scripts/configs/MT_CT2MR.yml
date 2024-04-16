@@ -1,0 +1,41 @@
+SOURCE: CT
+TARGET: MR
+NUM_WORKERS: 4
+FULLY_SUPERVISED: False
+TRAIN:
+  warmup_epoch: 100
+  DA_METHOD: MT
+  MODEL: DeepLabv2
+  RESTORE_FROM:   /mnt/workdir/fengwei/ultra_wide/DAUDA_IMAGE/mspcl/scripts/experiments/snapshots/CT2MR/senery_CT2MR/model_1500.pth
+  D_AUX_RESTORE:  /mnt/workdir/fengwei/ultra_wide/DAUDA_IMAGE/mspcl/scripts/experiments/snapshots/CT2MR/senery_CT2MR/model_1500_D_aux.pth
+  D_MAIN_RESTORE: /mnt/workdir/fengwei/ultra_wide/DAUDA_IMAGE/mspcl/scripts/experiments/snapshots/CT2MR/senery_CT2MR/model_1500_D_main.pth
+
+  CLASS_CENTER_FEA_INIT_TRG: /mnt/workdir/fengwei/ultra_wide/DAUDA_IMAGE/mspcl/scripts/experiments/snapshots/MR2CT/AdvEnt_MR2CT/feas/class_center_feas_model_5000.npy
+  CLASS_CENTER_FEA_INIT_SRC: /mnt/workdir/fengwei/ultra_wide/DAUDA_IMAGE/mspcl/scripts/experiments/snapshots/CT2MR/AdvEnt_CT2MR/feas/class_center_feas_model_30000.npy
+  D_TYPE:         PatchGAN
+  D_NORM:          Batch_Norm
+  MULTI_LEVEL: True
+  LAMBDA_ADV_MAIN:      0.003
+  LAMBDA_ADV_AUX:       0.00002
+  LAMBDA_MPCL_SRC:       1.0
+  LAMBDA_MPCL_TRG:       0.1
+  CLASS_CENTER_M:       0.01
+  PIXEL_SEL_TH:  0.02
+
+  SRC_TEMP:      2.0
+  SRC_BASE_TEMP: 1.0
+  TRG_TEMP:      1.0
+  TRG_BASE_TEMP: 1.0
+  SRC_MARGIN:    0.2
+  TRG_MARGIN:    0.2
+
+  LAMBDA_DICE_SRC_MAIN:   1.0
+  LAMBDA_DICE_SRC_AUX:    0.1
+  consistency: 0.1
+  consistency_type: mse
+  consistency_rampup: 50.0
+  ema_decay: 0.99
+
+TEST:
+  MODE: best
+
