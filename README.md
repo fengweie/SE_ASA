@@ -44,7 +44,7 @@ The pretrained model file contains two folder:
 
 To train SE_ASA
 
-* cd <root_dir>/MPSCL/scripts/
+* cd <root_dir>/SE_ASA/scripts/
 
 For MR2CT
 * CUDA_VISIBLE_DEVICES=#device_id# python train.py --cfg ./configs/MPSCL_MR2CT.yml
@@ -58,7 +58,7 @@ To test MPSCL
 
 **If you want to test our released pretrained model**
 
-* cd <root_dir>/MPSCL/scripts
+* cd <root_dir>/SE_ASA/scripts
 
 For MR2CT
 * CUDA_VISIBLE_DEVICES=#device_id# python test.py --target_modality 'CT' --pretrained_model_pth '../pretrained_model/testing/MPSCL_MR2CT_best.pth'
