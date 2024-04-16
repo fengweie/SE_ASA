@@ -54,7 +54,7 @@ For CT2MR
 
 ## Testing
 
-To test MPSCL
+To test SE_ASA
 
 **If you want to test our released pretrained model**
 
